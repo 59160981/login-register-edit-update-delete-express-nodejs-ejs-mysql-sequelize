@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profile - book store website</title>
+</head>
+
+<body>
+    <h1>profile</h1>
+    <p>id :
+        <%= emp.emp_id %>
+    </p>
+    <p>password :
+        <%= emp.emp_password %>
+    </p>
+    <p>name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+    </p><br>
+    <button onclick="location.href='login/edit/<%= emp.emp_id %>'">EDIT</button>
+    <button onclick="location.href='login/delete/<%= emp.emp_id %>'">delete</button>
+
+</body>
+
+</html>

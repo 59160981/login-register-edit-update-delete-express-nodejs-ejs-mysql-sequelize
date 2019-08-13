@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>register - book store website</title>
+</head>
+
+<body>
+    <h1>register</h1>
+    <form action="/register" method="post">
+        <p>id : <input type="text" name="id" maxlength="10" required></p>
+        <p>password : <input type="password" name="password" maxlength="16" required></p>
+        <p>First name : <input type="text" name="firstName" maxlength="25" required></p>
+        <p>Last name : <input type="text" name="lastName" maxlength="25" required></p>
+        <button type="submit">submit</button>
+    </form><br>
+    <span style="color: red;font-weight: bold"><%= err %></span>
+
+</body>
+
+</html>

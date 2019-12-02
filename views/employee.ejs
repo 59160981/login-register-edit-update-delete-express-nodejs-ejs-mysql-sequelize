@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home page - book store website</title>
+</head>
+
+<body>
+    <p>Name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+                &nbsp; Type :
+                <%= emp.emp_type %>
+    </p>
+    <ul>
+        <a href="/employee">หน้าแรก</a>
+        <a href="/employee/book-in-stock">หนังสือในร้าน</a>
+        <a href="/employee/sell">ขายหนังสือ</a>
+    </ul>
+</body>
+
+</html>

@@ -18,6 +18,10 @@ var Emp = db.define('employee', {
     emp_lastName: {
         type: Sequelize.STRING,
         field: 'emp_lastName'
+    },
+    emp_type: {
+        type: Sequelize.STRING,
+        field: 'emp_type'
     }
 }, {
     timestamps: false,

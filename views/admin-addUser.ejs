@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>add user - book store website</title>
+</head>
+
+<body onload="checkAddUser()">
+    <p>Name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+                &nbsp; Type :
+                <%= emp.emp_type %>
+    </p>
+    <h1>Add User</h1>
+    <form id="addUser" action="./addUser" method="post">
+        <p>id : <input type="text" name="id" maxlength="13" onkeyup="checkAddUser()">
+            <span id='alert-id'></span></p>
+        <p>password : <input type="password" name="password" maxlength="16" onkeyup="checkAddUser()">
+            <span id='alert-password'></span></p>
+        <p>confirm-password : <input type="password" name="confirm-password" maxlength="16" onkeyup="checkAddUser()">
+            <span id='alert-confirm-password'></span></p>
+        <p>First name : <input type="text" name="firstName" maxlength="25" onkeyup="checkAddUser()" onkeypress="checkAddUser()">
+            <span id='alert-firstName'></span></p>
+        <p>Last name : <input type="text" name="lastName" maxlength="25" onkeyup="checkAddUser()" onkeypress="checkAddUser()">
+            <span id='alert-lastName'></span></p>
+        <p>type : <select name="type" onchange="checkAddUser()">
+            <option value="" hidden>โปรดเลือก.......</option>
+            <option value="Customer">ลูกค้า</option>
+            <option value="Employee">พนักงาน</option>
+        </select>
+            <span id='alert-type'></span></p>
+    </form>
+    <br>
+    <button onclick="submitAddUser()">Submit</button>
+    <span style="color: red;font-weight: bold"><%= err %></span>
+
+</body>
+<script src="/myScript/script-userManage.js"></script>
+
+</html>

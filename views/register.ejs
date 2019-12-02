@@ -8,17 +8,31 @@
     <title>register - book store website</title>
 </head>
 
-<body>
+<body onload="checkRegister()">
     <h1>register</h1>
-    <form action="/register" method="post">
-        <p>id : <input type="text" name="id" maxlength="10" required></p>
-        <p>password : <input type="password" name="password" maxlength="16" required></p>
-        <p>First name : <input type="text" name="firstName" maxlength="25" required></p>
-        <p>Last name : <input type="text" name="lastName" maxlength="25" required></p>
-        <button type="submit">submit</button>
-    </form><br>
+    <form id="register" action="/register" method="post">
+        <p>id : <input type="text" name="id" maxlength="13" onkeyup="checkRegister()">
+            <span id='alert-id'></span></p>
+        <p>password : <input type="password" name="password" maxlength="16" onkeyup="checkRegister()">
+            <span id='alert-password'></span></p>
+        <p>confirm-password : <input type="password" name="confirm-password" maxlength="16" onkeyup="checkRegister()">
+            <span id='alert-confirm-password'></span></p>
+        <p>First name : <input type="text" name="firstName" maxlength="25" onkeyup="checkRegister()" onkeypress="checkRegister()">
+            <span id='alert-firstName'></span></p>
+        <p>Last name : <input type="text" name="lastName" maxlength="25" onkeyup="checkRegister()" onkeypress="checkRegister()">
+            <span id='alert-lastName'></span></p>
+        <p>type : <select name="type" onchange="checkRegister()">
+            <option value="" hidden>โปรดเลือก.......</option>
+            <option value="Customer">ลูกค้า</option>
+            <option value="Employee">พนักงาน</option>
+        </select>
+            <span id='alert-type'></span></p>
+    </form>
+    <br>
+    <button onclick="submitRegister()">Submit</button>
     <span style="color: red;font-weight: bold"><%= err %></span>
 
 </body>
+<script src="/myScript/check-register.js"></script>
 
 </html>

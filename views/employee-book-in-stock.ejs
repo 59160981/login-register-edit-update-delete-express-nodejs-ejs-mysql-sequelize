@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>book in stock - book store website</title>
+</head>
+
+<body>
+    <p>Name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+                &nbsp; Type :
+                <%= emp.emp_type %>
+    </p>
+    <ul>
+        <a href="/employee">หน้าแรก</a>
+        <a href="/employee/book-in-stock">หนังสือในร้าน</a>
+        <a href="/employee/sell">ขายหนังสือ</a>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อ</th>
+                <th>จำนวน</th>
+                <th>ชนิด</th>
+                <th>หมายเหตุ</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อ</th>
+                <th>จำนวน</th>
+                <th>ชนิด</th>
+                <th>หมายเหตุ</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <% for(var i=0; i < book.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= book[i].book_id %>
+                            <td>
+                                <%= book[i].book_name %>
+                            </td>
+                            <td>
+                                <%= book[i].book_amount %>
+                            </td>
+                            <td>
+                                <%= book[i].book_type %>
+                            </td>
+                            <td><button onclick="">Edit</button>
+                                <button onclick="">Delete</button></td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>

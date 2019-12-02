@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profile - book store website</title>
+</head>
+
+<body>
+    <p>Name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+                &nbsp; Type :
+                <%= emp.emp_type %>
+    </p>
+    <button onclick="location.href = 'user-manage/addUser'">Add User</button>
+    <table>
+        <thead>
+            <tr>
+                <th>รหัสผู้ใช้งาน</th>
+                <th>ชื่อ - นามสกุล</th>
+                <th>สถานะ</th>
+                <th>หมายเหตุ</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>รหัสผู้ใช้งาน</th>
+                <th>ชื่อ - นามสกุล</th>
+                <th>สถานะ</th>
+                <th>หมายเหตุ</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <% for(var i=0; i < user.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= user[i].emp_id %>
+                            <td>
+                                <%= user[i].emp_firstName %>
+                                    <%= user[i].emp_lastName %>
+                            </td>
+                            <td>
+                                <%= user[i].emp_type %>
+                            </td>
+                            <td><button onclick="location.href = '/user-manage/edit/<%= user[i].emp_id %>'">Edit</button>
+                                <button onclick="deleteUser('<%= user[i].emp_id %>')">Delete</button></td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+<script src="/myScript/script-userManage.js"></script>
+
+</html>

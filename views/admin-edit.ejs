@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>edit - book store website</title>
+</head>
+
+<body onload="checkEditUser()">
+    <p>Name :
+        <%= emp.emp_firstName %>
+            <%= emp.emp_lastName %>
+                &nbsp; Type :
+                <%= emp.emp_type %>
+    </p>
+    <h1>edit</h1>
+    <form id='editUser' action="./<%= user.emp_id %>" method="post">
+        <p>id : <input type="text" name="id" value="<%= user.emp_id %>" readonly></p>
+        <p>password : <input type="password" name="password" maxlength="16" onkeyup="checkEditUser()">
+            <span id='alert-password'></span></p>
+        <p>First name : <input type="text" name="firstName" maxlength="25" value="<%= user.emp_firstName %>" onkeyup="checkEditUser()" onkeypress="checkEditUser()">
+            <span id='alert-firstName'></span></p>
+        <p>Last name : <input type="text" name="lastName" maxlength="25" value="<%= user.emp_lastName %>" onkeyup="checkEditUser()" onkeypress="checkEditUser()">
+            <span id='alert-lastName'></span></p>
+        <p>type : <select name="type" onchange="checkEditUser()">
+                    <option value="<%= user.emp_type %>" hidden><%= emp.emp_type %></option>
+                    <option value="Customer">ลูกค้า</option>
+                    <option value="Employee">พนักงาน</option>
+                </select></p>
+    </form>
+    <button onclick="submitEditUser()">Enter</button>
+</body>
+<script src="/myScript/script-userManage.js"></script>
+
+</html>
